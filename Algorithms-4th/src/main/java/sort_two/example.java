@@ -9,14 +9,6 @@ package sort_two;
 public class example {
 
 	/**
-	 * 排序算法的实现
-	 * 
-	 * @param a
-	 */
-	public static void sort(Comparable[] a) {
-	}
-
-	/**
 	 * 对元素进行比较
 	 * 
 	 * @param v

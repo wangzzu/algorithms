@@ -40,8 +40,8 @@ public class SortCompare {
 			Selection.sort(a);
 		if (alg.equals("Shell"))
 			Shell.sort(a);
-		// if(alg.equals("Merge"))
-		// Merge.sort(a);
+		if (alg.equals("Merge"))
+			Merge.sort(a);
 		// if(alg.equals("Quick"))
 		// Quick.sort(a);
 		// if(alg.equals("Heap"))
