@@ -8,9 +8,6 @@ package sort_two;
  */
 public class example {
 
-	public static void main(String[] args) {
-	}
-
 	/**
 	 * 排序算法的实现
 	 * 
