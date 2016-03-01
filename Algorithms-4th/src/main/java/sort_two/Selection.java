@@ -17,6 +17,11 @@ public class Selection extends example {
 		show(a);
 	}
 
+	/**
+	 * 排序算法实现
+	 * 
+	 * @param a
+	 */
 	public static void sort(Comparable[] a) {
 		int N = a.length;
 		for (int i = 0; i < N; i++) {
