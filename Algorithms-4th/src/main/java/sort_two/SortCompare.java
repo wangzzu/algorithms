@@ -42,8 +42,8 @@ public class SortCompare {
 			Shell.sort(a);
 		if (alg.equals("Merge"))
 			Merge.sort(a);
-		// if(alg.equals("Quick"))
-		// Quick.sort(a);
+		if (alg.equals("Quick"))
+			Quick.sort(a);
 		// if(alg.equals("Heap"))
 		// Heap.sort(a);
 		long now = System.currentTimeMillis();
