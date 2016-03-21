@@ -1,6 +1,9 @@
 package search_three;
 
-import com.StdIn;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 import com.StdOut;
 
 /**
@@ -19,17 +22,32 @@ public class FrequencyCounter {
 		int minlen = Integer.parseInt(args[0]);
 		ST<String, Integer> st = new ST<String, Integer>();
 
-		while (!StdIn.isEmpty()) {
-			String key = StdIn.readString();
-			if (key.length() < minlen)
-				continue;
-			words++;// 记录长度大于minlen的总单词数
-			if (st.contains(key)) {
-				st.put(key, st.get(key) + 1);
-			} else {
-				st.put(key, 1);
-				distinct++;// 记录长度大于minlen的单词数（不重复）
+		FileReader reader;
+
+		try {
+			reader = new FileReader("/home/matt/data/suanfadata/tale");
+			BufferedReader br = new BufferedReader(reader);
+			String msg = null;
+			while ((msg = br.readLine()) != null) {
+				String[] msgs = msg.split(" ");
+
+				for (String key : msgs) {
+					if (key.length() < minlen)
+						continue;
+					words++;// 记录长度大于minlen的总单词数
+					if (st.contains(key)) {
+						st.put(key, st.get(key) + 1);
+					} else {
+						st.put(key, 1);
+						distinct++;// 记录长度大于minlen的单词数（不重复）
+					}
+				}
 			}
+			br.close();
+			reader.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		String max = "";
@@ -39,7 +57,7 @@ public class FrequencyCounter {
 				max = word;
 		}
 		StdOut.println(max + " " + st.get(max));
-		StdOut.printf("distinct = " + distinct);
+		StdOut.println("distinct = " + distinct);
 		StdOut.println("words = " + words);
 	}
 }
