@@ -23,6 +23,13 @@ public class Quick extends example {
 		assert isSorted(a1);
 		System.out.println("\na1 output:");
 		show(a1);
+
+		// 检查合在一起的快排写法
+		String[] a2 = new String[] { "S", "O", "R", "T", "B", "X", "A", "M", "P", "L", "E" };
+		sort(a2, 0, 10, true);
+		assert isSorted(a2);
+		System.out.println("\na1 output:");
+		show(a2);
 	}
 
 	public static void sort(Comparable[] a) {
@@ -73,6 +80,39 @@ public class Quick extends example {
 		}
 		exch(a, lo, j);
 		return j;
+	}
+
+	/**
+	 * 合在一起的快排写法
+	 * 
+	 * @param a
+	 * @param low
+	 * @param high
+	 * @param flag
+	 */
+	public static void sort(Comparable[] a, int low, int high, boolean flag) {
+		int l = low;
+		int h = high;
+		Comparable key = a[l];
+		while (l < h) {
+			while (l < h && less(key, a[h]))
+				h--;
+			if (l < h) {
+				exch(a, l, h);
+				l++;
+			}
+
+			while (l < h && less(a[l], key))
+				l++;
+			if (l < h) {
+				exch(a, l, h);
+				h--;
+			}
+		}
+		if (l > low)
+			sort(a, low, l - 1);
+		if (h < high)
+			sort(a, l + 1, high);
 	}
 
 	/**
