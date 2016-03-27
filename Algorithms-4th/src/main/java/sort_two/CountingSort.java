@@ -8,7 +8,7 @@ package sort_two;
  */
 public class CountingSort extends example {
 	public static void main(String[] args) {
-		// 检查一般的快速排序算法
+		// 检查排序结果
 		int[] a = new int[] { 21, 13, 56, 11, 1, 42, 4, 3, 64, 13, 0, 35, 11, 7, 17, 26 };
 		int[] b = sort(a);
 		assert isSorted(b);
