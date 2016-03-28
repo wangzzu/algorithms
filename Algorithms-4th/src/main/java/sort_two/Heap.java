@@ -14,16 +14,19 @@ public class Heap extends example {
 		for (int k = N / 2; k >= 1; k--)
 			sink(pq, k, N);
 		while (N > 1) {
-			exch(pq, 1, N--);
+			exch(pq, 1, N);
+			N--;
 			sink(pq, 1, N);
 		}
 	}
 
-	private static void sink(Comparable[] pq, int k, int N) {
+	public static void sink(Comparable[] pq, int k, int N) {
 		while (2 * k <= N) {
 			int j = 2 * k;
-			if (j < N && less(pq, j, j + 1))
-				j++;
+			if (j + 1 <= N) {
+				if (j < N && less(pq, j, j + 1))
+					j++;
+			}
 			if (!less(pq, k, j))
 				break;
 			exch(pq, k, j);
@@ -31,13 +34,13 @@ public class Heap extends example {
 		}
 	}
 
-	private static void exch(Object[] pq, int i, int j) {
-		Object swap = pq[i - 1];
+	public static void exch(Comparable[] pq, int i, int j) {
+		Comparable swap = pq[i - 1];
 		pq[i - 1] = pq[j - 1];
 		pq[j - 1] = swap;
 	}
 
-	private static boolean less(Comparable[] pq, int i, int j) {
+	public static boolean less(Comparable[] pq, int i, int j) {
 		return pq[i - 1].compareTo(pq[j - 1]) < 0;
 	}
 
