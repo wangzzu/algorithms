@@ -1,4 +1,4 @@
-package org.kg.offer;
+package org.kg.leetcode;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
