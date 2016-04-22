@@ -1,4 +1,4 @@
-package twenty_20;
+package linkedlist;
 
 public class AddTwoNumbers_002 {
 
