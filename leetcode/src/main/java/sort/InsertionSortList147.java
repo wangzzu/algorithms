@@ -3,7 +3,7 @@ package sort;
 /**
  * Created by matt on 4/22/16.
  */
-public class InsertionSortList {
+public class InsertionSortList147 {
 
 	public static class ListNode {
 		int val;

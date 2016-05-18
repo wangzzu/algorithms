@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Created by matt on 4/21/16.
  */
-public class MergeIntervals {
+public class MergeIntervals56 {
 	public static class Interval {
 		int start;
 		int end;

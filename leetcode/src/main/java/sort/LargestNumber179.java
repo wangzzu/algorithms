@@ -7,7 +7,7 @@ import java.util.Comparator;
  * use greedy algorithm
  * Created by matt on 4/21/16.
  */
-public class LargestNumber {
+public class LargestNumber179 {
 
 	public static void main(String[] args) {
 		int[] a = {5, 69, 1, 25, 2, 3, 7, 41, 0, 32};

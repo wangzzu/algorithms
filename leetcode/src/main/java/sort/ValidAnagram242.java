@@ -7,7 +7,7 @@ import java.util.Iterator;
 /**
  * Created by matt on 4/21/16.
  */
-public class ValidAnagram {
+public class ValidAnagram242 {
 	public static void main(String[] args) {
 		System.out.println(solution("qwertqw","trwqeqw"));
 		System.out.println(solution2("qwertqw", "trwqeqw"));
