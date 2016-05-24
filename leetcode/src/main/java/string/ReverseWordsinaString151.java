@@ -1,4 +1,4 @@
-package String;
+package string;
 
 /**
  * 此题还需要考虑如果是连续两个空格，甚至是三个空格，该如何处理
